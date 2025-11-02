@@ -58,6 +58,18 @@ inline Vec3 operator*(const Vec3 &a,const Vec3 &b){
     return Vec3(a.x*b.x,a.y*b.y,a.z*b.z);
 }
 
+inline Vec3 operator*(double t,const Vec3 &v){
+    return Vec3(t*v.x,t*v.y,t*v.z);
+}
+
+inline Vec3 operator*(const Vec3 &v,double t){
+    return t*v;
+}
+
+inline Vec3 operator/(const Vec3 &v,double t){
+    return Vec3(v.x/t,v.y/t,v.z/t);
+}
+
 inline double dot(const Vec3 &a,const Vec3 &b){
     return a.x*b.x + a.y*b.y + a.z*b.z;
 }
