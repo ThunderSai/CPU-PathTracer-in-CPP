@@ -17,6 +17,9 @@ using namespace std::chrono;
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
+    
+    auto start_time = high_resolution_clock::now();
+    cerr << "Starting render (NO BVH - Brute Force)...\n";
 
     const int WIDTH = 1920;
     const int HEIGHT = 1080;
@@ -76,7 +79,12 @@ int main(){
             cout << ir << " " << ig << " " << ib << "\n";
         }
     }
+    
+    auto end_time = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(end_time - start_time);
   
     cerr << "\nRender complete.\n";
+    cerr << "Time taken (NO BVH): " << duration.count() / 1000.0 << " seconds\n";
+    
     return 0;
 }
