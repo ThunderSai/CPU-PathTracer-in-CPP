@@ -13,6 +13,7 @@ Header files
 ├── hittable.h <br>
 ├── material.h <br>
 ├── aabb.h <br>
+├── util.h <br>
 └── bvh.h <br>
 
 Source files
@@ -28,3 +29,15 @@ Source files
 Other files
 
 ├── Makefile  # Build instructions <br>
+
+Build Instructions
+
+To build the project, simply run:
+
+`make with_bvh`
+
+if make is not available:
+
+```cpp
+g++ -std=c++11 -O3 -fopenmp main.cpp vec3.cpp aabb.cpp material.cpp hittable.cpp camera.cpp -o ray_tracer
+./ray_tracer > image1.ppm
