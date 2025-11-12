@@ -6,6 +6,7 @@ Project Structure
 cpu_path_tracer/
 
 Header files
+
 ├── vec3.h <br>
 ├── ray.h <br>
 ├── camera.h <br>
@@ -15,6 +16,7 @@ Header files
 └── bvh.h <br>
 
 Source files
+
 ├── main.cpp <br>
 ├── vec3.cpp <br>
 ├── camera.cpp <br>
@@ -24,4 +26,5 @@ Source files
 └── bvh.cpp <br>
 
 Other files
+
 ├── Makefile  # Build instructions <br>
