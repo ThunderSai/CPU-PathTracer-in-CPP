@@ -1,5 +1,5 @@
-#include "hittable.h"
-#include "utils.h"
+#include "../include/hittable.h"
+#include "../include/utils.h"
 #include <algorithm>
 #include <random>
 #include <iostream>
