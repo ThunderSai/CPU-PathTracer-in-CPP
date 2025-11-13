@@ -1,5 +1,5 @@
 # CPU-PathTracer-in-CPP
-A CPU-based path tracing renderer built in C++ from scratch. This project is part of my DSA learning journey, where I explore data structures, algorithms, and numerical methods through realistic light simulation and rendering techniques.
+A CPU-based path tracing renderer built in C++ from scratch. This project is part of our DSA learning journey, where we explore data structures, algorithms, and numerical methods through realistic light simulation and rendering techniques.
 
 ## 📁 Project Structure
 
@@ -28,15 +28,15 @@ Other files
 
 Build Instructions
 
-To build the project, simply run:
+To build the project (download with_bvh or clone), simply run: 
 ```cpp
-make with_bvh
+make  
 ```
 
 if make is not available:
 
 ```cpp
-g++ -std=c++11 -O3 -fopenmp main.cpp vec3.cpp aabb.cpp material.cpp hittable.cpp camera.cpp -o ray_tracer
+g++ -std=c++11 -O3 -fopenmp -Iinclude main.cpp src/vec3.cpp src/aabb.cpp src/material.cpp src/hittable.cpp src/camera.cpp -o ray_tracer
 ./ray_tracer > image1.ppm
 ```
 
@@ -50,5 +50,3 @@ BVH partitions scene geometry into bounding boxes, allowing the renderer to skip
 
 ### Parallelization
 OpenMP is used to parallelize ray calculations across CPU cores, taking advantage of multi-core architectures.
-
-
