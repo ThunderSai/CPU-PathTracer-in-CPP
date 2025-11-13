@@ -1,5 +1,5 @@
-#include "vec3.h"
-#include "utils.h"
+#include "../include/vec3.h"
+#include "../include/utils.h"
 #include <cmath>
 
 Vec3 Vec3::random(double a, double b) {
