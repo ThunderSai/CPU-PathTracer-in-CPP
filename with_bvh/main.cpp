@@ -2,12 +2,12 @@
 #ifdef _OPENMP
 #include <omp.h>
 #endif
-#include "vec3.h"
-#include "ray.h"
-#include "hittable.h"
-#include "camera.h"
-#include "material.h"
-#include "utils.h"
+#include "include/vec3.h"
+#include "include/ray.h"
+#include "include/hittable.h"
+#include "include/camera.h"
+#include "include/material.h"
+#include "include/utils.h"
 
 using namespace std;
 using namespace std::chrono;
