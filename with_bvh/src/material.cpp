@@ -1,6 +1,6 @@
-#include "material.h"
-#include "hittable.h"
-#include "utils.h"
+#include "../include/material.h"
+#include "../include/hittable.h"
+#include "../include/utils.h"
 #include <algorithm>
 
 bool Lambert::scatter(const Ray&, const HitRecord &rec, Vec3 &attenuate, Ray &scattered) const {
