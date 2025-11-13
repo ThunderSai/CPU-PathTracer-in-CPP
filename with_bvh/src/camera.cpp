@@ -1,4 +1,4 @@
-#include "camera.h"
+#include "../include/camera.h"
 #include <cmath>
 
 Camera::Camera(const Vec3 &lookfrom, const Vec3 &lookat, const Vec3 &view, double vfov_deg, double aspect) {
