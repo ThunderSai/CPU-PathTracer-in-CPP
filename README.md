@@ -3,7 +3,7 @@ A CPU-based path tracing renderer built in C++ from scratch. This project is par
 
 ## 📁 Project Structure
 
-/with_bvh/
+for /with_bvh/
 
 ### 🧩 Header files
 ├── vec3.h <br>
@@ -15,18 +15,17 @@ A CPU-based path tracing renderer built in C++ from scratch. This project is par
 └── utils.h <br>
 
 ### ⚙️ Source files
-├── main.cpp <br>
 ├── vec3.cpp <br>
 ├── camera.cpp <br>
 ├── hittable.cpp <br>
 ├── material.cpp <br>
 └── aabb.cpp <br>
 
-Other files
-
+### Other files
+├── main.cpp <br>
 ├── Makefile  # Build instructions <br>
 
-Build Instructions
+## Build Instructions
 
 To build the project (download with_bvh or clone), simply run: 
 ```cpp
@@ -50,3 +49,11 @@ BVH partitions scene geometry into bounding boxes, allowing the renderer to skip
 
 ### Parallelization
 OpenMP is used to parallelize ray calculations across CPU cores, taking advantage of multi-core architectures.
+
+## 📘 Sources and References
+
+### Peter Shirley’s “Ray Tracing in One Weekend” series:
+Used as the foundational reference for ray tracing concepts, materials, and camera systems.
+
+### OpenMP Documentation
+Reference for implementing CPU parallelization and multi-threaded rendering.
