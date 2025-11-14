@@ -5,11 +5,11 @@
 Vec3 Vec3::random(double a, double b) {
     return Vec3(a + (b-a)*rand01(), a + (b-a)*rand01(), a + (b-a)*rand01());
 }
-
+  // Standard reflection formula  it bounce vector in derectiom of normal.
 Vec3 reflect(const Vec3 &v,const Vec3 &n){ 
     return v - 2*dot(v,n)*n; 
 }
-
+// calculting final refracted ray by using snells law formulas.
 bool refract(const Vec3 &uv,const Vec3 &n,double etai_over_etat, Vec3 &refracted){
     double cosi = -std::max(-1.0, std::min(1.0, dot(uv,n)));
     double sin2t = etai_over_etat*etai_over_etat * (1 - cosi*cosi);
@@ -20,7 +20,7 @@ bool refract(const Vec3 &uv,const Vec3 &n,double etai_over_etat, Vec3 &refracted
     refracted = etai_over_etat * (uv + cosi*n) - cost*n;
     return true;
 }
-
+// schlick formula
 double schlick(double cosine, double ref_idx){
     double r0 = (1 - ref_idx) / (1 + ref_idx);
 
@@ -38,10 +38,12 @@ Vec3 random_in_unit_sphere(){
 
 
 Vec3 random_unit_vec(){
+    // Random angle (theta) aur random height (z) choose kar rahe hain
     double a = 2.0*M_PI*rand01();
 
     double z = 2*rand01() - 1;
+    //radius calculation
     double r = sqrt(std::max(0.0,1.0 - z*z));
     
-    return Vec3(r*cos(a), r*sin(a), z);
+    return Vec3(r*cos(a), r*sin(a), z); // final unit  vector in 3d coorecdinates.
 }
