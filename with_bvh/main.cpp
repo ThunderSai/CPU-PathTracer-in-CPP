@@ -79,21 +79,22 @@ int main(){
     objects.push_back(make_shared<RectPlane>(Vec3(half-1e-4, 0.6, 0.6), Vec3(-1,0,0),
                                      Vec3(0,0,1), Vec3(0,1,0),
                                      -0.18, 0.18, -0.12, 0.12, window_right_light));
-
+// these are for spheres inside the room.
     objects.push_back(make_shared<Sphere>(Vec3(0.0, -0.35, 0.0), 0.35, glass));
     objects.push_back(make_shared<Sphere>(Vec3(0.7, -0.45, 0.3), 0.45, chrome));
     objects.push_back(make_shared<Sphere>(Vec3(-0.7, -0.55, -0.4), 0.25, dark_green));
 
+    // BVH acceleration structure for faster ray-scene intersection
     vector<shared_ptr<Hittable>> objects_copy = objects;
     shared_ptr<Hittable> world = make_shared<BVHNode>(objects_copy, 0, objects_copy.size());
-
+ //  we have set up camera here .
     Vec3 lookfrom(0.0, 0.0, 2.5);
     Vec3 lookat(0.0, -0.2, 0.0);
     Vec3 vup(0,1,0);
     double vfov = 35.0;
     double aspect = double(WIDTH) / double(HEIGHT);
     Camera cam(lookfrom, lookat, vup, vfov, aspect);
-
+// render loop.
     for (int j = HEIGHT-1; j >= 0; --j) {
         cerr << "\rScanlines remaining: " << j << " " << flush;
         for (int i = 0; i < WIDTH; ++i) {
@@ -105,13 +106,14 @@ int main(){
                 col += trace(r, *world, MAX_DEPTH);
             }
             col *= (1.0 / SAMPLES);
+            // average color and gamma correction code here;
             int ir = static_cast<int>(256 * clampd(sqrt(col.x), 0.0, 0.999));
             int ig = static_cast<int>(256 * clampd(sqrt(col.y), 0.0, 0.999));
             int ib = static_cast<int>(256 * clampd(sqrt(col.z), 0.0, 0.999));
             cout << ir << " " << ig << " " << ib << "\n";
         }
     }
-
+// here we are grtting average render time optput.
     auto end_time = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(end_time - start_time);
 
